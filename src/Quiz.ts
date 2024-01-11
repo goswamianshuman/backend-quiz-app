@@ -1,5 +1,10 @@
 import { IoManager } from "./managers/IoManager";
 
+interface User {
+  name: string;
+  id: string;
+}
+
 interface Problem {
   title: string;
   description: string;
@@ -12,10 +17,11 @@ interface Problem {
 }
 
 export class Quiz {
-  private roomId: string;
+  public roomId: string;
   private hasStarted: boolean;
   private problems: Problem[];
   private activeProblem: number;
+  private users: User[];
 
   constructor(roomId: string) {
     this.roomId = roomId;
@@ -51,5 +57,15 @@ export class Quiz {
         problem,
       });
     }
+  }
+
+  random() {
+    var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
+    var chatLength = chars.length;
+    var result = "";
+  }
+
+  addUser(name) {
+    this.user;
   }
 }

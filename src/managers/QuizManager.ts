@@ -22,4 +22,12 @@ export class QuizManager {
       type: "START_ROOM",
     });
   }
+
+  addUser(roomId: string, name: string) {
+    this.getQuiz(roomId)?.addUser(name);
+  }
+
+  getQuiz(roomId: string) {
+    return this.quizes.find((x) => x.roomId === roomId) ?? null;
+  }
 }
